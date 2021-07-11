@@ -1,11 +1,4 @@
 <div class="d-flex justify-content-around">
-	<ul>
-		<app-product *ngFor="let product of products; let i = index;"
-		             [product]="product"
-		             [index]="i"></app-product>
-	</ul>
-	<ul>
-		<app-cart-product *ngFor="let cartProduct of cartProducts"
-		                  [cartProduct]="cartProduct"></app-cart-product>
-	</ul>
+	<app-product></app-product>
+	<app-cart></app-cart>
 </div>

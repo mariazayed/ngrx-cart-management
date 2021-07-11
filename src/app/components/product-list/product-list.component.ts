@@ -1,15 +1,27 @@
-import { Component, OnInit } from '@angular/core';
+import {
+    Component,
+    Input,
+} from '@angular/core';
+import { ProductInterface } from '../../interfaces/product.interface';
+import { AddToCart } from '../../actions/cart.actions';
+import { Store } from '@ngrx/store';
+import { AppStateInterface } from '../../interfaces/app-state.interface';
 
 @Component({
-  selector: 'app-product-list',
-  templateUrl: './product-list.component.html',
-  styleUrls: ['./product-list.component.scss']
+    selector: 'app-product-list',
+    templateUrl: './product-list.component.html',
+    styleUrls: [ './product-list.component.scss' ],
 })
-export class ProductListComponent implements OnInit {
+export class ProductListComponent {
+    @Input() product!: ProductInterface;
 
-  constructor() { }
+    constructor(private store: Store<AppStateInterface>) {
+    }
 
-  ngOnInit(): void {
-  }
-
+    addToCart() {
+        this.store.dispatch(new AddToCart({
+            product: this.product,
+            quantity: 5,
+        }));
+    }
 }

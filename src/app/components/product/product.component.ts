@@ -1,10 +1,9 @@
 import {
     Component,
-    Input,
     OnInit,
 } from '@angular/core';
 import { ProductInterface } from '../../interfaces/product.interface';
-import { CartService } from '../../services/cart.service';
+import { ProductService } from '../../services/product.service';
 
 @Component({
     selector: 'app-product',
@@ -12,20 +11,12 @@ import { CartService } from '../../services/cart.service';
     styleUrls: [ './product.component.scss' ],
 })
 export class ProductComponent implements OnInit {
-    @Input() product!: ProductInterface;
-    @Input() index!: number;
+    products: ProductInterface[] = [];
 
-    constructor(private cartService: CartService) {
+    constructor(private productService: ProductService) {
     }
 
     ngOnInit(): void {
-    }
-
-    addToCart() {
-        const cartProducts = this.cartService.getCartProducts();
-        this.cartService.addProductToCart({
-            product: cartProducts[this.index].product,
-            quantity: this.index + 1,
-        });
+        this.products = this.productService.getProducts();
     }
 }

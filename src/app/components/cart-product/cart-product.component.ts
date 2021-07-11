@@ -1,22 +1,25 @@
 import {
     Component,
     Input,
-    OnInit,
 } from '@angular/core';
 import { CartProductInterface } from '../../interfaces/cart-product.interface';
+import { RemoveFromCart } from '../../actions/cart.actions';
+import { Store } from '@ngrx/store';
+import { AppStateInterface } from '../../interfaces/app-state.interface';
 
 @Component({
     selector: 'app-cart-product',
     templateUrl: './cart-product.component.html',
     styleUrls: [ './cart-product.component.scss' ],
 })
-export class CartProductComponent implements OnInit {
+export class CartProductComponent {
     @Input() cartProduct!: CartProductInterface;
-  
-    constructor() {
+    @Input() index!: number;
+
+    constructor(private store: Store<AppStateInterface>) {
     }
 
-    ngOnInit(): void {
+    removeFromCart() {
+        this.store.dispatch(new RemoveFromCart(this.index));
     }
-
 }

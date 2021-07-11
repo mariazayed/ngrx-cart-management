@@ -17,17 +17,14 @@ import { CartProductComponent } from './components/cart-product/cart-product.com
         ProductComponent,
         ProductListComponent,
         CartComponent,
-        // @ts-ignore
-        StoreModule.forRoot({
-            // @ts-ignore
-            cart: cartReducer,
-        }),
         CartProductComponent,
     ],
     imports: [
         BrowserModule,
         AppRoutingModule,
         BrowserAnimationsModule,
+        // @ts-ignore
+        StoreModule.forRoot({ cart: cartReducer }),
     ],
     providers: [],
     bootstrap: [ AppComponent ],

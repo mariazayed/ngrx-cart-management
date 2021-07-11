@@ -1,1 +1,6 @@
-<li>{{ cartProduct.product.name }} - {{ cartProduct.quantity }}</li>
+<div class="d-flex my-4">
+	<p>{{ cartProduct.product.name }} - {{ cartProduct.quantity }}</p>
+	<button class="btn btn-danger"
+	        (click)="removeFromCart()">Delete
+	</button>
+</div>

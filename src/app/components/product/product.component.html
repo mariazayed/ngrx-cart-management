@@ -1,4 +1,2 @@
-<div class="d-flex my-4">
-	<span>{{ product.name }}</span>
-	<button class="btn btn-danger" (click)="addToCart()">Add to cart</button>
-</div>
+<app-product-list *ngFor="let product of products;"
+                  [product]="product"></app-product-list>

@@ -1,2 +1,9 @@
-<app-product-list *ngFor="let product of products;"
-                  [product]="product"></app-product-list>
+<div class="d-flex flex-column">
+	<h1 class="text-center" style="font-weight: bold;">Products</h1>
+	<div class="d-flex shadow justify-content-center"
+	     style="flex-wrap: wrap; border: 1px solid lightgray;
+     padding: 20px; border-radius: 10px">
+		<app-product-list *ngFor="let product of products;"
+		                  [product]="product"></app-product-list>
+	</div>
+</div>

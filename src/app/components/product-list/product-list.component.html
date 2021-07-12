@@ -1,6 +1,19 @@
-<div class="d-flex my-4">
-	<span>{{ product.name }}</span>
-	<button class="btn btn-info"
-	        (click)="addToCart()">Add to cart
+<div class="d-flex flex-column my-4 shadow"
+     style="border: 1px solid lightgrey; padding: 15px; border-radius: 10px; margin:10px;">
+	<span class="text-center"
+	      style="font-size: 20px; font-weight: bold;">{{ product.name }}</span>
+	<span class="text-center"
+	      style="margin: 10px;">Price: {{ product.price }}$
+	</span>
+	<mat-form-field>
+		<mat-label>Quantity</mat-label>
+		<input [(ngModel)]="quantity"
+		       matInput
+		       placeholder="Quantity"
+		       type="number"/>
+	</mat-form-field>
+	<button (click)="addToCart()"
+	        class="btn btn-info align-self-center"
+	        style="width: fit-content; color: white;">Add to cart
 	</button>
 </div>

@@ -15,13 +15,16 @@ import { AppStateInterface } from '../../interfaces/app-state.interface';
 export class ProductListComponent {
     @Input() product!: ProductInterface;
 
+    quantity: number = 0;
+
     constructor(private store: Store<AppStateInterface>) {
     }
 
     addToCart() {
         this.store.dispatch(new AddToCart({
             product: this.product,
-            quantity: 5,
+            quantity: this.quantity,
         }));
+        this.quantity = 0;
     }
 }

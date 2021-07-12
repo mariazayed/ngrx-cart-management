@@ -1,6 +1,15 @@
-<div class="d-flex my-4">
-	<p>{{ cartProduct.product.name }} - {{ cartProduct.quantity }}</p>
-	<button class="btn btn-danger"
-	        (click)="removeFromCart()">Delete
+<div class="d-flex flex-column my-4 shadow"
+     style="border: 1px solid lightgrey; padding: 15px; border-radius: 10px; margin:10px;">
+	<span class="text-center"
+	      style="font-size: 20px; font-weight: bold;">{{ cartProduct.product.name }}</span>
+	<span class="text-center"
+	      style="margin: 10px;">Quantity: {{ cartProduct.quantity }}
+	</span>
+	<span class="text-center"
+	      style="margin: 10px;">Price: {{ cartProduct.quantity * cartProduct.product.price }}$
+	</span>
+	<button class="btn btn-danger align-self-center"
+	        style="width: fit-content; color: white;"
+	        (click)="removeFromCart()">Remove
 	</button>
 </div>

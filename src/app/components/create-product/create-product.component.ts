@@ -7,6 +7,8 @@ import {
     FormGroup,
     Validators,
 } from '@angular/forms';
+import { Store } from '@ngrx/store';
+import { CreateProduct } from '../../actions/product.actions';
 
 @Component({
     selector: 'app-create-product',
@@ -17,7 +19,8 @@ export class CreateProductComponent implements OnInit {
 
     productForm!: FormGroup;
 
-    constructor(private formBuilder: FormBuilder) {
+    constructor(private formBuilder: FormBuilder,
+                private store: Store) {
     }
 
     ngOnInit(): void {
@@ -28,4 +31,11 @@ export class CreateProductComponent implements OnInit {
         });
     }
 
+    async createProduct() {
+        const info = this.productForm.getRawValue();
+        console.log('info', info);
+        await this.store.dispatch(new CreateProduct(info));
+        alert('Added Successfully!');
+        this.productForm.reset();
+    }
 }

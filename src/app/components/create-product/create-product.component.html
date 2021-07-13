@@ -1,26 +1,38 @@
-<div class="d-flex flex-column">
-	<h1>Create New Product</h1>
+<div class="d-flex flex-column align-items-center"
+     style="padding-top: 10%;">
 
-	<form [formGroup]="productForm">
-		<mat-form-field>
-			<mat-label>Name</mat-label>
-			<input formControlName="name"
-			       matInput
-			       type="text"/>
-		</mat-form-field>
+	<div class="d-flex flex-column align-items-center shadow"
+	     style="border: 1px solid lightgray; border-radius: 10px; width: 300px;
+	     padding-top: 20px; padding-bottom: 20px;">
+		<h1>Create New Product</h1>
 
-		<mat-form-field>
-			<mat-label>Price</mat-label>
-			<input formControlName="price"
-			       matInput
-			       type="number"/>
-		</mat-form-field>
+		<form [formGroup]="productForm"
+		      class="d-flex flex-column">
+			<mat-form-field>
+				<mat-label>Name</mat-label>
+				<input formControlName="name"
+				       matInput
+				       type="text"/>
+			</mat-form-field>
 
-		<mat-form-field>
-			<mat-label>Description</mat-label>
-			<textarea formControlName="description"
-			          matInput
-			          type="text"></textarea>
-		</mat-form-field>
-	</form>
+			<mat-form-field>
+				<mat-label>Price</mat-label>
+				<input formControlName="price"
+				       matInput
+				       type="number"/>
+			</mat-form-field>
+
+			<mat-form-field>
+				<mat-label>Description</mat-label>
+				<textarea formControlName="description"
+				          matInput
+				          type="text"></textarea>
+			</mat-form-field>
+		</form>
+
+		<button (click)="createProduct()"
+		        [disabled]="!productForm.valid"
+		        class="btn btn-success">Create
+		</button>
+	</div>
 </div>

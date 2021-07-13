@@ -3,7 +3,7 @@
 	<div class="d-flex shadow justify-content-center"
 	     style="flex-wrap: wrap; border: 1px solid lightgray;
      padding: 20px; border-radius: 10px">
-		<app-product-list *ngFor="let product of products;"
+		<app-product-list *ngFor="let product of products | async"
 		                  [product]="product"></app-product-list>
 	</div>
 </div>

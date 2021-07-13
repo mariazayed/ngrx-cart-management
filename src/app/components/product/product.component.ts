@@ -3,7 +3,9 @@ import {
     OnInit,
 } from '@angular/core';
 import { ProductInterface } from '../../interfaces/product.interface';
-import { ProductService } from '../../services/product.service';
+import { Store } from '@ngrx/store';
+import { AppStateInterface } from '../../interfaces/app-state.interface';
+import { Observable } from 'rxjs';
 
 @Component({
     selector: 'app-product',
@@ -11,12 +13,13 @@ import { ProductService } from '../../services/product.service';
     styleUrls: [ './product.component.scss' ],
 })
 export class ProductComponent implements OnInit {
-    products: ProductInterface[] = [];
 
-    constructor(private productService: ProductService) {
+    products: Observable<ProductInterface[]>;
+
+    constructor(private store: Store<AppStateInterface>) {
+        this.products = store.select('products');
     }
 
     ngOnInit(): void {
-        this.products = this.productService.getProducts();
     }
 }

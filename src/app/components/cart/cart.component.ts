@@ -11,7 +11,7 @@ import { CartProductInterface } from '../../interfaces/cart-product.interface';
 })
 export class CartComponent {
 
-    cartProducts!: Observable<CartProductInterface[]>;
+    cartProducts: Observable<CartProductInterface[]>;
 
     constructor(private store: Store<AppStateInterface>) {
         this.cartProducts = store.select('cart');

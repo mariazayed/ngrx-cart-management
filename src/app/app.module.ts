@@ -21,6 +21,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { ShopComponent } from './components/shop/shop.component';
 import { CreateProductComponent } from './components/create-product/create-product.component';
+import { productReducer } from './reducers/product.reducer';
 
 @NgModule({
     declarations: [
@@ -43,8 +44,12 @@ import { CreateProductComponent } from './components/create-product/create-produ
         MatToolbarModule,
         MatIconModule,
         MatButtonModule,
-        // @ts-ignore
-        StoreModule.forRoot({ cart: cartReducer }),
+        StoreModule.forRoot({
+            // @ts-ignore
+            cart: cartReducer,
+            // @ts-ignore
+            products: productReducer,
+        }),
     ],
     providers: [],
     bootstrap: [ AppComponent ],

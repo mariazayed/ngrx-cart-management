@@ -16,6 +16,11 @@ import {
     FormsModule,
     ReactiveFormsModule,
 } from '@angular/forms';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { ShopComponent } from './components/shop/shop.component';
+import { CreateProductComponent } from './components/create-product/create-product.component';
 
 @NgModule({
     declarations: [
@@ -24,17 +29,22 @@ import {
         ProductListComponent,
         CartComponent,
         CartProductComponent,
+        ShopComponent,
+        CreateProductComponent,
     ],
     imports: [
         BrowserModule,
-        AppRoutingModule,
         BrowserAnimationsModule,
-        // @ts-ignore
-        StoreModule.forRoot({ cart: cartReducer }),
+        AppRoutingModule,
         MatFormFieldModule,
         MatInputModule,
         FormsModule,
         ReactiveFormsModule,
+        MatToolbarModule,
+        MatIconModule,
+        MatButtonModule,
+        // @ts-ignore
+        StoreModule.forRoot({ cart: cartReducer }),
     ],
     providers: [],
     bootstrap: [ AppComponent ],

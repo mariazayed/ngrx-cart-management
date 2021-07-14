@@ -1,0 +1,12 @@
+<div class="d-flex flex-column my-4 shadow"
+     style="border: 1px solid lightgrey; padding: 15px; border-radius: 10px; margin:10px; width: 185px">
+	<span class="text-center"
+	      style="font-size: 20px; font-weight: bold;">{{ product.name }}</span>
+	<span class="text-center"
+	      style="margin: 10px;">Price: {{ product.price }}$
+	</span>
+	<button (click)="delete()"
+	        class="btn btn-danger align-self-center"
+	        style="width: fit-content; color: white;">Delete
+	</button>
+</div>

@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ProductComponent } from './pages/shop/product/product.component';
+import { ProductsComponent } from './pages/shop/products/products.component';
 import { ProductListComponent } from './pages/shop/product-list/product-list.component';
 import { CartComponent } from './pages/shop/cart/cart.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -23,10 +23,12 @@ import { ShopComponent } from './pages/shop/shop.component';
 import { CreateProductComponent } from './pages/create-product/create-product.component';
 import { productReducer } from './reducers/product.reducer';
 import { DeleteProductComponent } from './pages/delete-product/delete-product.component';
+import { ProductComponent } from './pages/delete-product/product/product.component';
 
 @NgModule({
     declarations: [
         AppComponent,
+        ProductsComponent,
         ProductComponent,
         ProductListComponent,
         CartComponent,

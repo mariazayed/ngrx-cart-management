@@ -5,6 +5,7 @@ import {
 } from '@angular/router';
 import { ShopComponent } from './pages/shop/shop.component';
 import { CreateProductComponent } from './pages/create-product/create-product.component';
+import { DeleteProductComponent } from './pages/delete-product/delete-product.component';
 
 const routes: Routes = [
     {
@@ -14,6 +15,10 @@ const routes: Routes = [
     {
         path: 'create-product',
         component: CreateProductComponent,
+    },
+    {
+        path: 'delete-product',
+        component: DeleteProductComponent,
     },
 ];
 

@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { AppStateInterface } from '../../interfaces/app-state.interface';
+import { AppStateInterface } from '../../../interfaces/app-state.interface';
 import { Observable } from 'rxjs';
-import { CartProductInterface } from '../../interfaces/cart-product.interface';
+import { CartProductInterface } from '../../../interfaces/cart-product.interface';
 
 @Component({
     selector: 'app-cart',

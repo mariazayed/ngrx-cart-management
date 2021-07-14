@@ -2,9 +2,9 @@ import {
     Component,
     OnInit,
 } from '@angular/core';
-import { ProductInterface } from '../../interfaces/product.interface';
+import { ProductInterface } from '../../../interfaces/product.interface';
 import { Store } from '@ngrx/store';
-import { AppStateInterface } from '../../interfaces/app-state.interface';
+import { AppStateInterface } from '../../../interfaces/app-state.interface';
 import { Observable } from 'rxjs';
 
 @Component({

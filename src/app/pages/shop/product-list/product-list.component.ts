@@ -2,10 +2,10 @@ import {
     Component,
     Input,
 } from '@angular/core';
-import { ProductInterface } from '../../interfaces/product.interface';
-import { AddToCart } from '../../actions/cart.actions';
+import { ProductInterface } from '../../../interfaces/product.interface';
+import { AddToCart } from '../../../actions/cart.actions';
 import { Store } from '@ngrx/store';
-import { AppStateInterface } from '../../interfaces/app-state.interface';
+import { AppStateInterface } from '../../../interfaces/app-state.interface';
 
 @Component({
     selector: 'app-product-list',

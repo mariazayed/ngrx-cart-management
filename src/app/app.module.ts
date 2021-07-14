@@ -3,13 +3,13 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ProductComponent } from './components/product/product.component';
-import { ProductListComponent } from './components/product-list/product-list.component';
-import { CartComponent } from './components/cart/cart.component';
+import { ProductComponent } from './pages/shop/product/product.component';
+import { ProductListComponent } from './pages/shop/product-list/product-list.component';
+import { CartComponent } from './pages/shop/cart/cart.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { StoreModule } from '@ngrx/store';
 import { cartReducer } from './reducers/cart.reducer';
-import { CartProductComponent } from './components/cart-product/cart-product.component';
+import { CartProductComponent } from './pages/shop/cart-product/cart-product.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import {
@@ -19,9 +19,10 @@ import {
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
-import { ShopComponent } from './components/shop/shop.component';
-import { CreateProductComponent } from './components/create-product/create-product.component';
+import { ShopComponent } from './pages/shop/shop.component';
+import { CreateProductComponent } from './pages/create-product/create-product.component';
 import { productReducer } from './reducers/product.reducer';
+import { DeleteProductComponent } from './pages/delete-product/delete-product.component';
 
 @NgModule({
     declarations: [
@@ -32,6 +33,7 @@ import { productReducer } from './reducers/product.reducer';
         CartProductComponent,
         ShopComponent,
         CreateProductComponent,
+        DeleteProductComponent,
     ],
     imports: [
         BrowserModule,

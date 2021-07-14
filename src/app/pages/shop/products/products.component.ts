@@ -8,11 +8,11 @@ import { AppStateInterface } from '../../../interfaces/app-state.interface';
 import { Observable } from 'rxjs';
 
 @Component({
-    selector: 'app-product',
-    templateUrl: './product.component.html',
-    styleUrls: [ './product.component.scss' ],
+    selector: 'app-products',
+    templateUrl: './products.component.html',
+    styleUrls: [ './products.component.scss' ],
 })
-export class ProductComponent implements OnInit {
+export class ProductsComponent implements OnInit {
 
     products: Observable<ProductInterface[]>;
 

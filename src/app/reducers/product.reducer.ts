@@ -1,8 +1,8 @@
 import { ProductInterface } from '../interfaces/product.interface';
 import {
     CREATE_PRODUCT,
+    DELETE_PRODUCT,
     ProductActions,
-    REMOVE_PRODUCT,
 } from '../actions/product.actions';
 
 const initialState: ProductInterface[] = [
@@ -63,7 +63,7 @@ export function productReducer(state: ProductInterface[] = initialState, action:
     switch (action.type) {
         case CREATE_PRODUCT:
             return [ ...state, action.payload ];
-        case REMOVE_PRODUCT:
+        case DELETE_PRODUCT:
             return state.filter((_, index) => index !== action.payload);
         default:
             return state;

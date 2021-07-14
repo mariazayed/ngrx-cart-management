@@ -2,7 +2,7 @@ import { Action } from '@ngrx/store';
 import { ProductInterface } from '../interfaces/product.interface';
 
 export const CREATE_PRODUCT = 'Create product';
-export const REMOVE_PRODUCT = 'Remove product';
+export const DELETE_PRODUCT = 'Delete product';
 
 export class CreateProduct implements Action {
     readonly type = CREATE_PRODUCT;
@@ -11,11 +11,11 @@ export class CreateProduct implements Action {
     }
 }
 
-export class RemoveProduct implements Action {
-    readonly type = REMOVE_PRODUCT;
+export class DeleteProduct implements Action {
+    readonly type = DELETE_PRODUCT;
 
     constructor(public payload: number) {
     }
 }
 
-export type ProductActions = CreateProduct | RemoveProduct
+export type ProductActions = CreateProduct | DeleteProduct
